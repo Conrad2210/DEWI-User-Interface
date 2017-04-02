@@ -374,11 +374,16 @@ class MainWindow(QtGui.QMainWindow):
         parseIoTLabAction.setStatusTip("Parse serial.csv files from IoTLab");
         parseIoTLabAction.setEnabled(False);
 
+        parseLWBAction = QtGui.QAction("&Parse FlockLab", self)
+        parseLWBAction.setShortcut('Ctrl+L');
+        parseLWBAction.setStatusTip("Parse *.log files from LWB experiments");
+        parseLWBAction.triggered.connect(self.parseLWB)
 
         menubar = self.menuBar()
         fileMenu = menubar.addMenu('&Parse')
         fileMenu.addAction(parseFlockLabAction)
         fileMenu.addAction(parseIoTLabAction)
+        fileMenu.addAction(parseLWBAction)
 
 
 
@@ -794,6 +799,38 @@ class MainWindow(QtGui.QMainWindow):
 
             print "done"
 
+    def parseLWB(self):
+        # results = ["test":[]];
+        self.lastPath = QtGui.QFileDialog.getOpenFileName(self, "Open FlockLab file", self.lastPath, "LOG (*.log)")
+        self.txPackets = {};
+        self.rxPackets = {};
+        print self.lastPath
+        description = os.path.splitext(os.path.split(str(self.lastPath))[1])[0]
+
+        self.db.insertExperiment(self.db.getLastExperimentID()+1,description,int(time.time()));
+        self.db.insertSettings(0,self.db.getLastExperimentID(),0,200,2,20,0);
+        with open(self.lastPath, 'rb') as csvfile:
+            file = csv.reader(csvfile);
+
+
+            for row in file:
+                if 'timeslot' in row[1]:
+                    id = row[0][row[0].index(":")+1:len(row[0])]
+                    timeslot = row[1][row[1].index(":")+1:len(row[1])]
+                    count = row[2][row[2].index(":")+1:len(row[2])]
+                    self.db.insertLatency(0,self.db.getLastExperimentID(),id,timeslot,count);
+                    print "id: "+str(id)+" timeslot: "+str(timeslot)+" count: "+str(count);
+                elif 'rx' in row[1]:
+                    id = row[0][row[0].index(":")+1:len(row[0])];
+                    rx = row[1][row[1].index(":")+1:len(row[1])];
+                    self.db.insertRxPackets(0,self.db.getLastExperimentID(),id,rx)
+                    print "id: "+str(id)+" rx: "+str(rx)
+                elif 'tx' in row[1]:
+
+                    id = row[0][row[0].index(":")+1:len(row[0])];
+                    tx = row[1][row[1].index(":")+1:len(row[1])];
+                    self.db.insertTxPackets(0,self.db.getLastExperimentID(),id,tx);
+                    print "id: "+str(id)+" tx: "+str(tx)
 
     # These are the methods to call when the window is being closed. The two
     # Qthreads are asked to stop.
@@ -1550,30 +1587,19 @@ class MainWindow(QtGui.QMainWindow):
                 self.xmax.append(max(self.x_list[i]))
                 # self.xmin.append(min(self.x_list[i]))
                 self.y_list[i] = [x * 100 for x in self.y_list[i]]
-                self.axes_latency.plot(self.x_list[i], self.y_list[i], linewidth=1)  # , label=name_labels[i]
+                self.axes_latency.plot(self.x_list[i], self.y_list[i], linewidth=2)  # , label=name_labels[i]
 
-        self.axes_latency.legend(self.PlotLegend,loc='upper center', bbox_to_anchor=(0.5, -0.05),fancybox=True, shadow=True, ncol=5)
+        box = self.axes_latency.get_position()
+        self.axes_latency.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+        self.axes_latency.legend(self.PlotLegend,bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)#,loc='upper center', bbox_to_anchor=(0.5, -0.05),fancybox=True, shadow=True, ncol=5)
+        self.axes_latency.grid(linewidth=2);
+        for tick in self.axes_latency.xaxis.get_major_ticks():
+            tick.label.set_fontsize(14)
+        for tick in self.axes_latency.yaxis.get_major_ticks():
+            tick.label.set_fontsize(14)
+        self.axes_latency.set_xlabel("latency [ms]",fontsize=14)
+        self.axes_latency.set_ylabel(r"$F_x(x)$ [%]",fontsize=14)
 
-        for i in range(len(self.x_list)):
-            if self.x_list[i] != []:
-                # for j in range(len(self.x_list[i])):
-                #     if self.y_list[i][j] >= 99:
-                #         y_99 = self.y_list[i][j]
-                #         x_99 = self.x_list[i][j]
-                #         break
-                # for j in range(len(self.x_list[i])):
-                #     if self.x_list[i][j] >= 240:
-                #         y_200 = self.y_list[i][j]
-                #         break
-                # if (y_200 == 0):
-                #     y_200 = 1
-                # self.axes_latency.plot([240, 240], [0.0, 100.0], label="".format(
-                #     y_200 * 100))
-
-                #self.axes_latency.set_title("240ms: {0:.2f} %, 99%: {1}ms".format(y_200, x_99))
-                self.axes_latency.set_title("Latency")
-                self.axes_latency.set_xlabel("latency [ms]")
-                self.axes_latency.set_ylabel(r"$F_x(x)$ [%]")
         if (max(self.xmax) < 200):
             self.xmax = 200
         else:
@@ -1586,17 +1612,27 @@ class MainWindow(QtGui.QMainWindow):
 
         print self.plr_x
         prop_iter = iter(plt.rcParams['axes.prop_cycle'])
+
+        box = self.axes_plr.get_position()
+        self.axes_plr.set_position([box.x0, box.y0, box.width * 0.8, box.height])
         for i in range(0, len(self.plr_x)):
             print self.plr_x[i]
             print self.plr_y[i]
 
             self.axes_plr.bar(self.plr_x[i] + 1, self.plr_y[i], align='center',color=next(prop_iter)['color'])
-            self.axes_plr.set_title("Packet Loss Rate")
-            self.axes_plr.set_xlabel("Number Experiment")
-            self.axes_plr.set_ylabel("[%]")
-            self.axes_plr.legend(self.PlotLegend, loc='upper center', bbox_to_anchor=(0.5, -0.05),fancybox=True, shadow=True, ncol=5)
+            # self.axes_plr.set_title("Packet Loss Rate")
+            self.axes_plr.set_xlabel("Number Experiment",fontsize=14)
+            self.axes_plr.set_ylabel("[%]", fontsize=14)
+            self.axes_plr.legend(self.PlotLegend, bbox_to_anchor=(1.05, 1), loc=2,
+                                     borderaxespad=0.)  # ,loc='upper center', bbox_to_anchor=(0.5, -0.05),fancybox=True, shadow=True, ncol=5)
+
             # self.axes_plr.xticks(self.plr_y[i] + 1, self.plr_y[i])
 
+       # self.axes_latency.grid(linewidth=2);
+        for tick in self.axes_plr.xaxis.get_major_ticks():
+            tick.label.set_fontsize(14)
+        for tick in self.axes_plr.yaxis.get_major_ticks():
+            tick.label.set_fontsize(14)
         # To add labels on top of the bars to show the precise plr, rects and
         # labels are used
         rects = self.axes_plr.patches
@@ -1610,7 +1646,7 @@ class MainWindow(QtGui.QMainWindow):
             print label
             height = rect.get_height()
             self.axes_plr.text(rect.get_x() + rect.get_width() / 2,
-                               height + 2, label, ha='center', va='bottom')
+                               height + 2, label, ha='center', va='bottom',fontsize=14)
         self.axes_plr.set_ylim([0, max(self.plr_y) + 5])
         plt.show()
         self.canvas_plr.draw()

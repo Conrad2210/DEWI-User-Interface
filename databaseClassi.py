@@ -7,9 +7,9 @@ from sqlalchemy.sql.functions import current_date
 class  databaseConnection():
 
     dbConnection = 0
-    # db = 'dewi_experiments';
+    db = 'dewi_experiments';
     host = 'localhost'
-    db = 'dewi_lwb'
+    #db = 'dewi_lwb'
     # db = 'dewi_flooding'
     def __init__(self):
         try:
