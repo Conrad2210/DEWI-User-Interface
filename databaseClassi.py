@@ -8,7 +8,7 @@ class  databaseConnection():
 
     dbConnection = 0
     db = 'dewi_experiments';
-    host = 'localhost'
+    host = '157.190.53.108'
     #db = 'dewi_lwb'
     # db = 'dewi_flooding'
     def __init__(self):
@@ -523,7 +523,7 @@ class  databaseConnection():
         try:
             self.dbConnection = mysql.connect(host=self.host,user='root',password="root",db=self.db,buffered=True)
             cursor = self.dbConnection.cursor()
-            cursor.execute("SELECT description FROM experiments WHERE id={0}".format(session_id))
+            cursor.execute("SELECT legend_text FROM experiments WHERE id={0}".format(session_id))
             descriptionRes = []
             for description in cursor:
                 descriptionRes.append(str(description[0]))

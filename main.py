@@ -374,20 +374,26 @@ class MainWindow(QtGui.QMainWindow):
         parseIoTLabAction.setStatusTip("Parse serial.csv files from IoTLab");
         parseIoTLabAction.setEnabled(False);
 
-        parseLWBAction = QtGui.QAction("&Parse FlockLab", self)
+        parseLWBAction = QtGui.QAction("&Parse LWB", self)
         parseLWBAction.setShortcut('Ctrl+L');
         parseLWBAction.setStatusTip("Parse *.log files from LWB experiments");
         parseLWBAction.triggered.connect(self.parseLWB)
+
+        parseOMNETAction = QtGui.QAction("&Parse OMNeT Results", self)
+        parseOMNETAction.setShortcut('Ctrl+O');
+        parseOMNETAction.setStatusTip("Parse OMNeT Results, use base Folder");
+        parseOMNETAction.triggered.connect(self.parseOMNET)
 
         menubar = self.menuBar()
         fileMenu = menubar.addMenu('&Parse')
         fileMenu.addAction(parseFlockLabAction)
         fileMenu.addAction(parseIoTLabAction)
         fileMenu.addAction(parseLWBAction)
+        fileMenu.addAction(parseOMNETAction)
 
 
 
-        self.lastPath = "C:\Users\R00118979\Desktop"
+        self.lastPath = "Y:\Sim_Results\Lighting\Dimming\Non_Beacon_CSMA\None\BottomMiddle\_100ms\_1BackoffRetries\csv"
 
         ##################################################
 
@@ -400,14 +406,19 @@ class MainWindow(QtGui.QMainWindow):
         self.PlotLegend = []
         delay_queue = []
         # Our figure, canvas and axes necessary to plot
+        plt.style.use('ggplot');
         self.figure_latency = plt.figure()
         self.figure_plr = plt.figure()
         self.figure_topology = plt.figure()
         self.canvas_latency = FigureCanvas(self.figure_latency)
         self.canvas_plr = FigureCanvas(self.figure_plr)
         self.axes_latency = self.figure_latency.add_subplot(111)
+        box = self.axes_latency.get_position()
+        self.axes_latency.set_position([box.x0, box.y0, box.width * 0.8, box.height])
         self.axes_latency.hold(True)
         self.axes_plr = self.figure_plr.add_subplot(111)
+        box = self.axes_plr.get_position()
+        self.axes_plr.set_position([box.x0, box.y0, box.width * 0.8, box.height])
         self.axes_plr.hold(True)
         # self.axes_plr.set_prop_cycle(cycler('color', ['c', 'm', 'y', 'k']))
         self.window_reset()
@@ -552,6 +563,7 @@ class MainWindow(QtGui.QMainWindow):
 
         self.addCheckBox = QtGui.QRadioButton("add")
         self.seperateCheckBox = QtGui.QRadioButton("seperate")
+        self.omnetCheckBox = QtGui.QRadioButton("OMNeT")
         PLOT_button.clicked.connect(self.compare)
         self.NeighUpdate_button.clicked.connect(self.neighUpdate)
         self.PRINT_button.clicked.connect(self.printList)
@@ -707,6 +719,7 @@ class MainWindow(QtGui.QMainWindow):
         test_HBox11.addWidget(PLOT_button)
         test_HBox11.addWidget(self.addCheckBox)
         test_HBox11.addWidget(self.seperateCheckBox)
+        test_HBox11.addWidget(self.omnetCheckBox)
         test_HBox11.addStretch(1)
 
         test_VBox.addLayout(test_HBox1)
@@ -831,6 +844,65 @@ class MainWindow(QtGui.QMainWindow):
                     tx = row[1][row[1].index(":")+1:len(row[1])];
                     self.db.insertTxPackets(0,self.db.getLastExperimentID(),id,tx);
                     print "id: "+str(id)+" tx: "+str(tx)
+
+    def parseOMNET(self):
+        print "parse Omnet";
+        QtGui.QFileDialog.getOpenFileName
+        self.lastPath = QtGui.QFileDialog.getExistingDirectory(self, "Open FlockLab file", self.lastPath)
+        subdirectories = [];
+
+        subdirs = os.listdir(self.lastPath)
+
+        for tx in subdirs:
+            densityDirs = os.listdir(os.path.join(str(self.lastPath),tx));
+            for dens in densityDirs:
+                latencyDir = os.path.join(str(self.lastPath),tx,dens,'latency','sortedPerNode')
+                rxDir = os.path.join(str(self.lastPath),tx,dens,'received','sortedPerNode')
+                txDir = os.path.join(str(self.lastPath),tx,dens,'msgsent','sortedPerNode','0_Node.csv')
+                description = os.path.join(str(self.lastPath),tx,dens);
+                # print os.path.split(description)
+                self.db.insertExperiment(self.db.getLastExperimentID()+1,description,time.time());
+                latencyFiles = os.listdir(latencyDir);
+
+                for file in latencyFiles:
+
+                    # print os.path.join(str(self.lastPath),tx,dens,'latency','sortedPerNode',file);
+                    print str(latencyFiles.index(file)) +" of " + str(len(latencyFiles))
+                    nodeId = file[0:file.index("_")];
+                    with open(os.path.join(str(self.lastPath),tx,dens,'latency','sortedPerNode',file), 'rb') as csvfile:
+                        data = csv.reader(csvfile);
+                        resCount = {};
+                        for row in data:
+                            try:
+                                resCount[str(int(float(row[0]) * 1000))] = resCount[str(int(float(row[0]) * 1000))] + 1;
+                            except KeyError:
+                                resCount[str(int(float(row[0]) * 1000))] = 1;
+
+                        for key,value in resCount.items():
+                            self.db.insertLatency(0,self.db.getLastExperimentID(),nodeId,int(key),int(value));
+
+                rxFiles = os.listdir(rxDir);
+                for file in rxFiles:
+                    print os.path.join(str(self.lastPath),tx,dens,'received','sortedPerNode',file);
+                    nodeId = file[0:file.index("_")];
+                    with open(os.path.join(str(self.lastPath),tx,dens,'received','sortedPerNode',file), 'rb') as csvfile:
+                        data = csv.reader(csvfile);
+                        resCount = 0;
+                        for row in data:
+                            resCount = resCount + int(row[0]);
+                        self.db.insertRxPackets(0,self.db.getLastExperimentID(),nodeId,resCount);
+
+                nodeId = 0
+                with open(txDir, 'rb') as csvfile:
+                    data = csv.reader(csvfile);
+                    resCount = 0;
+                    for row in data:
+                        resCount = resCount + int(row[0]);
+                    self.db.insertTxPackets(0,self.db.getLastExperimentID(),nodeId,resCount);
+
+
+
+
 
     # These are the methods to call when the window is being closed. The two
     # Qthreads are asked to stop.
@@ -977,7 +1049,7 @@ class MainWindow(QtGui.QMainWindow):
                     session_ids.append(int(self.compare5.currentText()[
                                            self.compare5.currentText().index("[") + 1:self.compare5.currentText().index(
                                                "]")]))
-            except  ValueError:
+            except ValueError:
                 print ValueError
 
             for i in range(0, len(session_ids)):
@@ -997,7 +1069,7 @@ class MainWindow(QtGui.QMainWindow):
             self.x_list.append(list(ecdf.x))
             self.y_list.append(list(ecdf.y))
             self.plot()
-        else:
+        elif self.seperateCheckBox.isChecked() == True:
             session_ids = []
             templat = []
             temprx = []
@@ -1056,6 +1128,79 @@ class MainWindow(QtGui.QMainWindow):
                     for j in range(0, templat[k][i][1]):
                         latency.append(int(templat[k][i][0] * 10))
 
+                ecdf = ECDF(latency)
+                self.x_list.append(list(ecdf.x))
+                self.y_list.append(list(ecdf.y))
+
+            for k in range(0, len(temprx)):
+                for i in range(0, len(temprx[k])):
+                    temprx[k][i] = 100. - ((100. * float(temprx[k][i])) / float(temptx[k][0]))
+
+                self.plr_x.append(k)
+                self.plr_y.append(float(sum(temprx[k]) / len(temprx[k])))
+
+            self.plot()
+        elif self.omnetCheckBox.isChecked() == True:
+            session_ids = []
+            templat = []
+            temprx = []
+            temptx = []
+
+            self.x_list = []
+            self.y_list = []
+            self.plr_x = []
+            self.plr_y = []
+            try:
+                if self.check1.isChecked() == True:
+                    session_ids.append(int(str(self.compare1.currentText())[
+                                           str(self.compare1.currentText()).index("[") + 1:str(
+                                               self.compare1.currentText()).index("]")]))
+            except  ValueError:
+                print ValueError
+            try:
+                if self.check2.isChecked() == True:
+                    session_ids.append(int(str(self.compare2.currentText())[
+                                           str(self.compare2.currentText()).index("[") + 1:str(
+                                               self.compare2.currentText()).index("]")]))
+            except  ValueError:
+                print ValueError
+            try:
+                if self.check3.isChecked() == True:
+                    session_ids.append(int(str(self.compare3.currentText())[
+                                           str(self.compare3.currentText()).index("[") + 1:str(
+                                               self.compare3.currentText()).index("]")]))
+            except  ValueError:
+                print ValueError
+            try:
+                if self.check4.isChecked() == True:
+                    session_ids.append(int(str(self.compare4.currentText())[
+                                           str(self.compare4.currentText()).index("[") + 1:str(
+                                               self.compare4.currentText()).index("]")]))
+            except  ValueError:
+                print ValueError
+            try:
+                if self.check5.isChecked() == True:
+                    session_ids.append(int(str(self.compare5.currentText())[
+                                           str(self.compare5.currentText()).index("[") + 1:str(
+                                               self.compare5.currentText()).index("]")]))
+            except  ValueError:
+                print ValueError
+            self.PlotLegend = []
+            for i in range(0, len(session_ids)):
+                templat.append(self.db.getLatencyResult(session_ids[i]))
+                temprx.append(self.db.getRXPackets(session_ids[i]))
+                temptx.append(self.db.getTXPackets(session_ids[i]))
+                self.PlotLegend.append(str(self.db.getDescription(session_ids[i])[0]))
+
+            latency = []
+            for k in range(0, len(templat)):
+                latency = []
+                for i in range(0, len(templat[k])):
+                    print "dataset " + str(i) + " of " + str(len(templat[k]))
+                    for j in range(0, templat[k][i][1]):
+                        latency.append(int(templat[k][i][0]))
+
+                print("start ECDF calculation");
                 ecdf = ECDF(latency)
                 self.x_list.append(list(ecdf.x))
                 self.y_list.append(list(ecdf.y))
@@ -1589,16 +1734,14 @@ class MainWindow(QtGui.QMainWindow):
                 self.y_list[i] = [x * 100 for x in self.y_list[i]]
                 self.axes_latency.plot(self.x_list[i], self.y_list[i], linewidth=2)  # , label=name_labels[i]
 
-        box = self.axes_latency.get_position()
-        self.axes_latency.set_position([box.x0, box.y0, box.width * 0.8, box.height])
-        self.axes_latency.legend(self.PlotLegend,bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)#,loc='upper center', bbox_to_anchor=(0.5, -0.05),fancybox=True, shadow=True, ncol=5)
+        self.axes_latency.legend(self.PlotLegend,bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize=14)#,loc='upper center', bbox_to_anchor=(0.5, -0.05),fancybox=True, shadow=True, ncol=5)
         self.axes_latency.grid(linewidth=2);
         for tick in self.axes_latency.xaxis.get_major_ticks():
             tick.label.set_fontsize(14)
         for tick in self.axes_latency.yaxis.get_major_ticks():
             tick.label.set_fontsize(14)
-        self.axes_latency.set_xlabel("latency [ms]",fontsize=14)
-        self.axes_latency.set_ylabel(r"$F_x(x)$ [%]",fontsize=14)
+        self.axes_latency.set_xlabel("Latency [ms]",fontsize=14,fontweight='bold')
+        self.axes_latency.set_ylabel(r"$F_x(x)$ [%]",fontsize=14,fontweight='bold')
 
         if (max(self.xmax) < 200):
             self.xmax = 200
@@ -1613,18 +1756,16 @@ class MainWindow(QtGui.QMainWindow):
         print self.plr_x
         prop_iter = iter(plt.rcParams['axes.prop_cycle'])
 
-        box = self.axes_plr.get_position()
-        self.axes_plr.set_position([box.x0, box.y0, box.width * 0.8, box.height])
         for i in range(0, len(self.plr_x)):
             print self.plr_x[i]
             print self.plr_y[i]
 
             self.axes_plr.bar(self.plr_x[i] + 1, self.plr_y[i], align='center',color=next(prop_iter)['color'])
             # self.axes_plr.set_title("Packet Loss Rate")
-            self.axes_plr.set_xlabel("Number Experiment",fontsize=14)
-            self.axes_plr.set_ylabel("[%]", fontsize=14)
+            self.axes_plr.set_xlabel("Experiment",fontsize=14,fontweight='bold')
+            self.axes_plr.set_ylabel("PLR [%]", fontsize=14,fontweight='bold')
             self.axes_plr.legend(self.PlotLegend, bbox_to_anchor=(1.05, 1), loc=2,
-                                     borderaxespad=0.)  # ,loc='upper center', bbox_to_anchor=(0.5, -0.05),fancybox=True, shadow=True, ncol=5)
+                                     borderaxespad=0.,fontsize=14)  # ,loc='upper center', bbox_to_anchor=(0.5, -0.05),fancybox=True, shadow=True, ncol=5)
 
             # self.axes_plr.xticks(self.plr_y[i] + 1, self.plr_y[i])
 
@@ -1648,7 +1789,14 @@ class MainWindow(QtGui.QMainWindow):
             self.axes_plr.text(rect.get_x() + rect.get_width() / 2,
                                height + 2, label, ha='center', va='bottom',fontsize=14)
         self.axes_plr.set_ylim([0, max(self.plr_y) + 5])
+        self.axes_plr.set_xlim([min(self.plr_x) + .5, max(self.plr_x) + 1.5])
+
+        self.axes_plr.yaxis.grid(linewidth=2)
         plt.show()
+        self.figure_latency.savefig('Latency.pdf', bbox_inches='tight')
+        self.figure_latency.savefig('Latency.png', bbox_inches='tight')
+        self.figure_plr.savefig('PLR.pdf', bbox_inches='tight')
+        self.figure_plr.savefig('PLR.png', bbox_inches='tight')
         self.canvas_plr.draw()
 
     def window_reset(self):  # Clears the current axes and reset the axis and title parameters
