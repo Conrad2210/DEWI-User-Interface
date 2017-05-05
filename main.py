@@ -1734,7 +1734,7 @@ class MainWindow(QtGui.QMainWindow):
                 self.y_list[i] = [x * 100 for x in self.y_list[i]]
                 self.axes_latency.plot(self.x_list[i], self.y_list[i], linewidth=2)  # , label=name_labels[i]
 
-        self.axes_latency.legend(self.PlotLegend,bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize=14)#,loc='upper center', bbox_to_anchor=(0.5, -0.05),fancybox=True, shadow=True, ncol=5)
+        # self.axes_latency.legend(self.PlotLegend,bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize=14)#,loc='upper center', bbox_to_anchor=(0.5, -0.05),fancybox=True, shadow=True, ncol=5)
         self.axes_latency.grid(linewidth=2);
         for tick in self.axes_latency.xaxis.get_major_ticks():
             tick.label.set_fontsize(14)
@@ -1794,9 +1794,9 @@ class MainWindow(QtGui.QMainWindow):
         self.axes_plr.yaxis.grid(linewidth=2)
         plt.show()
         self.figure_latency.savefig('Latency.pdf', bbox_inches='tight')
-        self.figure_latency.savefig('Latency.png', bbox_inches='tight')
+        self.figure_latency.savefig('Latency.png',dpi=600, bbox_inches='tight')
         self.figure_plr.savefig('PLR.pdf', bbox_inches='tight')
-        self.figure_plr.savefig('PLR.png', bbox_inches='tight')
+        self.figure_plr.savefig('PLR.png',dpi=600, bbox_inches='tight')
         self.canvas_plr.draw()
 
     def window_reset(self):  # Clears the current axes and reset the axis and title parameters

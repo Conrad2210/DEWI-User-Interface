@@ -12,7 +12,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DewiExperiments$main.coverage" NAME="main Coverage Results" MODIFIED="1491810653903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DewiExperiments$main.coverage" NAME="main Coverage Results" MODIFIED="1493814240992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DewiExperiments$databaseClassi.coverage" NAME="databaseClassi Coverage Results" MODIFIED="1493814220473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -26,8 +27,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="976" column="29" lean-forward="true" selection-start-line="976" selection-start-column="29" selection-end-line="976" selection-end-column="29" />
+            <state relative-caret-position="25704">
+              <caret line="1819" column="41" lean-forward="true" selection-start-line="1819" selection-start-column="41" selection-end-line="1819" selection-end-column="41" />
               <folding>
                 <element signature="e#1552#4491#0" expanded="false" />
                 <element signature="e#4602#5128#0" expanded="false" />
@@ -53,8 +54,8 @@
       <file leaf-file-name="databaseClassi.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/databaseClassi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8619">
-              <caret line="510" column="0" lean-forward="false" selection-start-line="510" selection-start-column="0" selection-end-line="510" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding>
                 <marker date="1491307289010" expanded="true" signature="832:857" ph="SELECT * FRO... experiments" />
                 <marker date="1491307289010" expanded="true" signature="1009:1115" ph="CREATE TABLE... experiments" />
@@ -142,10 +143,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="324" />
-    <option name="y" value="78" />
-    <option name="width" value="1024" />
-    <option name="height" value="728" />
+    <option name="x" value="300" />
+    <option name="y" value="216" />
+    <option name="width" value="1378" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
@@ -165,7 +166,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -180,7 +181,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -473,28 +474,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="324" y="78" width="1024" height="728" extended-state="0" />
+    <frame x="300" y="216" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24007936" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17694567" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2545156" sideWeight="0.50293684" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59527826" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9244992" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2545156" sideWeight="0.49706313" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9244992" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,6 +558,396 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1552#4491#0" expanded="false" />
+            <element signature="e#4602#5128#0" expanded="false" />
+            <element signature="e#5261#6267#0" expanded="false" />
+            <element signature="e#6308#7166#0" expanded="false" />
+            <element signature="e#7280#11369#0" expanded="false" />
+            <element signature="e#30328#32498#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda2/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databaseClassi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+          <folding>
+            <marker date="1491307289010" expanded="true" signature="832:857" ph="SELECT * FRO... experiments" />
+            <marker date="1491307289010" expanded="true" signature="1009:1115" ph="CREATE TABLE... experiments" />
+            <marker date="1491307289010" expanded="true" signature="1304:1326" ph="SELECT * FRO... settings" />
+            <marker date="1491307289010" expanded="true" signature="1487:1756" ph="CREATE TABLE... settings" />
+            <marker date="1491307289010" expanded="true" signature="1945:1966" ph="SELECT * FRO... latency" />
+            <marker date="1491307289010" expanded="true" signature="2127:2353" ph="CREATE TABLE... latency" />
+            <marker date="1491307289010" expanded="true" signature="2542:2565" ph="SELECT * FRO... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="2726:2931" ph="CREATE TABLE... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="3120:3143" ph="SELECT * FRO... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="3304:3509" ph="CREATE TABLE... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="3698:3722" ph="SELECT * FRO... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="3883:4114" ph="CREATE TABLE... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="4319:4347" ph="SELECT * FRO... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="4508:4662" ph="CREATE TABLE... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="5108:5181" ph="INSERT INTO experiments... " />
+            <marker date="1491307289010" expanded="true" signature="5853:5987" ph="INSERT INTO settings... " />
+            <marker date="1491307289010" expanded="true" signature="6687:6764" ph="SELECT * FRO... latency" />
+            <marker date="1491307289010" expanded="true" signature="6998:7085" ph="INSERT INTO latency... " />
+            <marker date="1491307289010" expanded="true" signature="7739:7799" ph="SELECT * FRO... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="8024:8100" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="8746:8806" ph="SELECT * FRO... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="9031:9107" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="9742:9809" ph="UPDATE txpac... " />
+            <marker date="1491307289010" expanded="true" signature="9940:10016" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="10601:10677" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="11553:11620" ph="UPDATE rxpac... " />
+            <marker date="1491307289010" expanded="true" signature="11751:11827" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="12373:12449" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="13347:13443" ph="INSERT INTO neighbours... " />
+            <marker date="1491307289010" expanded="true" signature="14064:14149" ph="INSERT INTO tempneighbours... " />
+            <marker date="1491307289010" expanded="true" signature="14721:14752" ph="SELECT MAX(i... experiments" />
+            <marker date="1491307289010" expanded="true" signature="15495:15561" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="16265:16352" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="17200:17286" ph="SELECT paren... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="18121:18187" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="18336:18401" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="19534:19603" ph="SELECT paren... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="20282:20334" ph="SELECT DISTI... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="20499:20551" ph="SELECT DISTI... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="22218:22264" ph="SELECT descr... experiments" />
+            <marker date="1491307289010" expanded="true" signature="22479:22570" ph="SELECT sessi... settings" />
+            <marker date="1491307289010" expanded="true" signature="23604:23681" ph="SELECT times... latency" />
+            <marker date="1491307289010" expanded="true" signature="24349:24394" ph="SELECT descr... experiments" />
+            <marker date="1491307289010" expanded="true" signature="25065:25110" ph="SELECT count... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="25771:25816" ph="SELECT count... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="26474:26534" ph="SELECT count... rxpackets" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1552#4491#0" expanded="false" />
+            <element signature="e#4602#5128#0" expanded="false" />
+            <element signature="e#5261#6267#0" expanded="false" />
+            <element signature="e#6308#7166#0" expanded="false" />
+            <element signature="e#7280#11369#0" expanded="false" />
+            <element signature="e#30328#32498#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda2/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databaseClassi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1491307289010" expanded="true" signature="832:857" ph="SELECT * FRO... experiments" />
+            <marker date="1491307289010" expanded="true" signature="1009:1115" ph="CREATE TABLE... experiments" />
+            <marker date="1491307289010" expanded="true" signature="1304:1326" ph="SELECT * FRO... settings" />
+            <marker date="1491307289010" expanded="true" signature="1487:1756" ph="CREATE TABLE... settings" />
+            <marker date="1491307289010" expanded="true" signature="1945:1966" ph="SELECT * FRO... latency" />
+            <marker date="1491307289010" expanded="true" signature="2127:2353" ph="CREATE TABLE... latency" />
+            <marker date="1491307289010" expanded="true" signature="2542:2565" ph="SELECT * FRO... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="2726:2931" ph="CREATE TABLE... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="3120:3143" ph="SELECT * FRO... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="3304:3509" ph="CREATE TABLE... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="3698:3722" ph="SELECT * FRO... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="3883:4114" ph="CREATE TABLE... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="4319:4347" ph="SELECT * FRO... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="4508:4662" ph="CREATE TABLE... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="5108:5181" ph="INSERT INTO experiments... " />
+            <marker date="1491307289010" expanded="true" signature="5853:5987" ph="INSERT INTO settings... " />
+            <marker date="1491307289010" expanded="true" signature="6687:6764" ph="SELECT * FRO... latency" />
+            <marker date="1491307289010" expanded="true" signature="6998:7085" ph="INSERT INTO latency... " />
+            <marker date="1491307289010" expanded="true" signature="7739:7799" ph="SELECT * FRO... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="8024:8100" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="8746:8806" ph="SELECT * FRO... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="9031:9107" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="9742:9809" ph="UPDATE txpac... " />
+            <marker date="1491307289010" expanded="true" signature="9940:10016" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="10601:10677" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="11553:11620" ph="UPDATE rxpac... " />
+            <marker date="1491307289010" expanded="true" signature="11751:11827" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="12373:12449" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="13347:13443" ph="INSERT INTO neighbours... " />
+            <marker date="1491307289010" expanded="true" signature="14064:14149" ph="INSERT INTO tempneighbours... " />
+            <marker date="1491307289010" expanded="true" signature="14721:14752" ph="SELECT MAX(i... experiments" />
+            <marker date="1491307289010" expanded="true" signature="15495:15561" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="16265:16352" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="17200:17286" ph="SELECT paren... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="18121:18187" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="18336:18401" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="19534:19603" ph="SELECT paren... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="20282:20334" ph="SELECT DISTI... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="20499:20551" ph="SELECT DISTI... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="22218:22264" ph="SELECT descr... experiments" />
+            <marker date="1491307289010" expanded="true" signature="22479:22570" ph="SELECT sessi... settings" />
+            <marker date="1491307289010" expanded="true" signature="23604:23681" ph="SELECT times... latency" />
+            <marker date="1491307289010" expanded="true" signature="24349:24394" ph="SELECT descr... experiments" />
+            <marker date="1491307289010" expanded="true" signature="25065:25110" ph="SELECT count... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="25771:25816" ph="SELECT count... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="26474:26534" ph="SELECT count... rxpackets" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1552#4491#0" expanded="false" />
+            <element signature="e#4602#5128#0" expanded="false" />
+            <element signature="e#5261#6267#0" expanded="false" />
+            <element signature="e#6308#7166#0" expanded="false" />
+            <element signature="e#7280#11369#0" expanded="false" />
+            <element signature="e#30328#32498#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda2/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databaseClassi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1491307289010" expanded="true" signature="832:857" ph="SELECT * FRO... experiments" />
+            <marker date="1491307289010" expanded="true" signature="1009:1115" ph="CREATE TABLE... experiments" />
+            <marker date="1491307289010" expanded="true" signature="1304:1326" ph="SELECT * FRO... settings" />
+            <marker date="1491307289010" expanded="true" signature="1487:1756" ph="CREATE TABLE... settings" />
+            <marker date="1491307289010" expanded="true" signature="1945:1966" ph="SELECT * FRO... latency" />
+            <marker date="1491307289010" expanded="true" signature="2127:2353" ph="CREATE TABLE... latency" />
+            <marker date="1491307289010" expanded="true" signature="2542:2565" ph="SELECT * FRO... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="2726:2931" ph="CREATE TABLE... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="3120:3143" ph="SELECT * FRO... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="3304:3509" ph="CREATE TABLE... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="3698:3722" ph="SELECT * FRO... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="3883:4114" ph="CREATE TABLE... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="4319:4347" ph="SELECT * FRO... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="4508:4662" ph="CREATE TABLE... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="5108:5181" ph="INSERT INTO experiments... " />
+            <marker date="1491307289010" expanded="true" signature="5853:5987" ph="INSERT INTO settings... " />
+            <marker date="1491307289010" expanded="true" signature="6687:6764" ph="SELECT * FRO... latency" />
+            <marker date="1491307289010" expanded="true" signature="6998:7085" ph="INSERT INTO latency... " />
+            <marker date="1491307289010" expanded="true" signature="7739:7799" ph="SELECT * FRO... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="8024:8100" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="8746:8806" ph="SELECT * FRO... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="9031:9107" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="9742:9809" ph="UPDATE txpac... " />
+            <marker date="1491307289010" expanded="true" signature="9940:10016" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="10601:10677" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="11553:11620" ph="UPDATE rxpac... " />
+            <marker date="1491307289010" expanded="true" signature="11751:11827" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="12373:12449" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="13347:13443" ph="INSERT INTO neighbours... " />
+            <marker date="1491307289010" expanded="true" signature="14064:14149" ph="INSERT INTO tempneighbours... " />
+            <marker date="1491307289010" expanded="true" signature="14721:14752" ph="SELECT MAX(i... experiments" />
+            <marker date="1491307289010" expanded="true" signature="15495:15561" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="16265:16352" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="17200:17286" ph="SELECT paren... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="18121:18187" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="18336:18401" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="19534:19603" ph="SELECT paren... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="20282:20334" ph="SELECT DISTI... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="20499:20551" ph="SELECT DISTI... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="22218:22264" ph="SELECT descr... experiments" />
+            <marker date="1491307289010" expanded="true" signature="22479:22570" ph="SELECT sessi... settings" />
+            <marker date="1491307289010" expanded="true" signature="23604:23681" ph="SELECT times... latency" />
+            <marker date="1491307289010" expanded="true" signature="24349:24394" ph="SELECT descr... experiments" />
+            <marker date="1491307289010" expanded="true" signature="25065:25110" ph="SELECT count... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="25771:25816" ph="SELECT count... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="26474:26534" ph="SELECT count... rxpackets" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1552#4491#0" expanded="false" />
+            <element signature="e#4602#5128#0" expanded="false" />
+            <element signature="e#5261#6267#0" expanded="false" />
+            <element signature="e#6308#7166#0" expanded="false" />
+            <element signature="e#7280#11369#0" expanded="false" />
+            <element signature="e#30328#32498#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda2/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databaseClassi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1491307289010" expanded="true" signature="832:857" ph="SELECT * FRO... experiments" />
+            <marker date="1491307289010" expanded="true" signature="1009:1115" ph="CREATE TABLE... experiments" />
+            <marker date="1491307289010" expanded="true" signature="1304:1326" ph="SELECT * FRO... settings" />
+            <marker date="1491307289010" expanded="true" signature="1487:1756" ph="CREATE TABLE... settings" />
+            <marker date="1491307289010" expanded="true" signature="1945:1966" ph="SELECT * FRO... latency" />
+            <marker date="1491307289010" expanded="true" signature="2127:2353" ph="CREATE TABLE... latency" />
+            <marker date="1491307289010" expanded="true" signature="2542:2565" ph="SELECT * FRO... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="2726:2931" ph="CREATE TABLE... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="3120:3143" ph="SELECT * FRO... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="3304:3509" ph="CREATE TABLE... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="3698:3722" ph="SELECT * FRO... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="3883:4114" ph="CREATE TABLE... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="4319:4347" ph="SELECT * FRO... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="4508:4662" ph="CREATE TABLE... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="5108:5181" ph="INSERT INTO experiments... " />
+            <marker date="1491307289010" expanded="true" signature="5853:5987" ph="INSERT INTO settings... " />
+            <marker date="1491307289010" expanded="true" signature="6687:6764" ph="SELECT * FRO... latency" />
+            <marker date="1491307289010" expanded="true" signature="6998:7085" ph="INSERT INTO latency... " />
+            <marker date="1491307289010" expanded="true" signature="7739:7799" ph="SELECT * FRO... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="8024:8100" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="8746:8806" ph="SELECT * FRO... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="9031:9107" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="9742:9809" ph="UPDATE txpac... " />
+            <marker date="1491307289010" expanded="true" signature="9940:10016" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="10601:10677" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="11553:11620" ph="UPDATE rxpac... " />
+            <marker date="1491307289010" expanded="true" signature="11751:11827" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="12373:12449" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="13347:13443" ph="INSERT INTO neighbours... " />
+            <marker date="1491307289010" expanded="true" signature="14064:14149" ph="INSERT INTO tempneighbours... " />
+            <marker date="1491307289010" expanded="true" signature="14721:14752" ph="SELECT MAX(i... experiments" />
+            <marker date="1491307289010" expanded="true" signature="15495:15561" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="16265:16352" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="17200:17286" ph="SELECT paren... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="18121:18187" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="18336:18401" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="19534:19603" ph="SELECT paren... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="20282:20334" ph="SELECT DISTI... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="20499:20551" ph="SELECT DISTI... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="22218:22264" ph="SELECT descr... experiments" />
+            <marker date="1491307289010" expanded="true" signature="22479:22570" ph="SELECT sessi... settings" />
+            <marker date="1491307289010" expanded="true" signature="23604:23681" ph="SELECT times... latency" />
+            <marker date="1491307289010" expanded="true" signature="24349:24394" ph="SELECT descr... experiments" />
+            <marker date="1491307289010" expanded="true" signature="25065:25110" ph="SELECT count... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="25771:25816" ph="SELECT count... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="26474:26534" ph="SELECT count... rxpackets" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1552#4491#0" expanded="false" />
+            <element signature="e#4602#5128#0" expanded="false" />
+            <element signature="e#5261#6267#0" expanded="false" />
+            <element signature="e#6308#7166#0" expanded="false" />
+            <element signature="e#7280#11369#0" expanded="false" />
+            <element signature="e#30328#32498#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda2/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databaseClassi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8619">
+          <caret line="510" column="0" lean-forward="false" selection-start-line="510" selection-start-column="0" selection-end-line="510" selection-end-column="0" />
+          <folding>
+            <marker date="1491307289010" expanded="true" signature="832:857" ph="SELECT * FRO... experiments" />
+            <marker date="1491307289010" expanded="true" signature="1009:1115" ph="CREATE TABLE... experiments" />
+            <marker date="1491307289010" expanded="true" signature="1304:1326" ph="SELECT * FRO... settings" />
+            <marker date="1491307289010" expanded="true" signature="1487:1756" ph="CREATE TABLE... settings" />
+            <marker date="1491307289010" expanded="true" signature="1945:1966" ph="SELECT * FRO... latency" />
+            <marker date="1491307289010" expanded="true" signature="2127:2353" ph="CREATE TABLE... latency" />
+            <marker date="1491307289010" expanded="true" signature="2542:2565" ph="SELECT * FRO... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="2726:2931" ph="CREATE TABLE... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="3120:3143" ph="SELECT * FRO... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="3304:3509" ph="CREATE TABLE... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="3698:3722" ph="SELECT * FRO... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="3883:4114" ph="CREATE TABLE... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="4319:4347" ph="SELECT * FRO... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="4508:4662" ph="CREATE TABLE... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="5108:5181" ph="INSERT INTO experiments... " />
+            <marker date="1491307289010" expanded="true" signature="5853:5987" ph="INSERT INTO settings... " />
+            <marker date="1491307289010" expanded="true" signature="6687:6764" ph="SELECT * FRO... latency" />
+            <marker date="1491307289010" expanded="true" signature="6998:7085" ph="INSERT INTO latency... " />
+            <marker date="1491307289010" expanded="true" signature="7739:7799" ph="SELECT * FRO... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="8024:8100" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="8746:8806" ph="SELECT * FRO... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="9031:9107" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="9742:9809" ph="UPDATE txpac... " />
+            <marker date="1491307289010" expanded="true" signature="9940:10016" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="10601:10677" ph="INSERT INTO txpackets... " />
+            <marker date="1491307289010" expanded="true" signature="11553:11620" ph="UPDATE rxpac... " />
+            <marker date="1491307289010" expanded="true" signature="11751:11827" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="12373:12449" ph="INSERT INTO rxpackets... " />
+            <marker date="1491307289010" expanded="true" signature="13347:13443" ph="INSERT INTO neighbours... " />
+            <marker date="1491307289010" expanded="true" signature="14064:14149" ph="INSERT INTO tempneighbours... " />
+            <marker date="1491307289010" expanded="true" signature="14721:14752" ph="SELECT MAX(i... experiments" />
+            <marker date="1491307289010" expanded="true" signature="15495:15561" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="16265:16352" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="17200:17286" ph="SELECT paren... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="18121:18187" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="18336:18401" ph="SELECT DISTI... neighbours" />
+            <marker date="1491307289010" expanded="true" signature="19534:19603" ph="SELECT paren... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="20282:20334" ph="SELECT DISTI... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="20499:20551" ph="SELECT DISTI... tempneighbours" />
+            <marker date="1491307289010" expanded="true" signature="22218:22264" ph="SELECT descr... experiments" />
+            <marker date="1491307289010" expanded="true" signature="22479:22570" ph="SELECT sessi... settings" />
+            <marker date="1491307289010" expanded="true" signature="23604:23681" ph="SELECT times... latency" />
+            <marker date="1491307289010" expanded="true" signature="24349:24394" ph="SELECT descr... experiments" />
+            <marker date="1491307289010" expanded="true" signature="25065:25110" ph="SELECT count... txpackets" />
+            <marker date="1491307289010" expanded="true" signature="25771:25816" ph="SELECT count... rxpackets" />
+            <marker date="1491307289010" expanded="true" signature="26474:26534" ph="SELECT count... rxpackets" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1257,13 +1648,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://Y:/MatLab_Calculations/DEWI/Dimming/CSMA/None/BottomMiddle/100ms/1BackoffRetries/CDF.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://Y:/MatLab_Calculations/DEWI/Dimming/CSMA/None/BottomMiddle/100ms/1BackoffRetries/CDF.m" />
     <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda2/Lib/ntpath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
@@ -1274,8 +1659,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/databaseClassi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8619">
-          <caret line="510" column="0" lean-forward="false" selection-start-line="510" selection-start-column="0" selection-end-line="510" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
           <folding>
             <marker date="1491307289010" expanded="true" signature="832:857" ph="SELECT * FRO... experiments" />
             <marker date="1491307289010" expanded="true" signature="1009:1115" ph="CREATE TABLE... experiments" />
@@ -1329,8 +1714,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="976" column="29" lean-forward="true" selection-start-line="976" selection-start-column="29" selection-end-line="976" selection-end-column="29" />
+        <state relative-caret-position="25704">
+          <caret line="1819" column="41" lean-forward="true" selection-start-line="1819" selection-start-column="41" selection-end-line="1819" selection-end-column="41" />
           <folding>
             <element signature="e#1552#4491#0" expanded="false" />
             <element signature="e#4602#5128#0" expanded="false" />
