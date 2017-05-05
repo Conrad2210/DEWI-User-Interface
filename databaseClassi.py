@@ -7,7 +7,7 @@ from sqlalchemy.sql.functions import current_date
 class  databaseConnection():
 
     dbConnection = 0
-    db = 'dewi_experiments';
+    db = 'dewi_sim';
     host = '157.190.53.108'
     #db = 'dewi_lwb'
     # db = 'dewi_flooding'
@@ -26,7 +26,7 @@ class  databaseConnection():
                 id
         except mysql.Error, e:
             try:
-                self.dbConnection.cursor().execute("CREATE TABLE experiments (id INT NOT NULL, description TEXT NULL, date_time INT(11) NULL, PRIMARY KEY(id))")
+                self.dbConnection.cursor().execute("CREATE TABLE experiments (id INT NOT NULL, description TEXT NULL, date_time INT(11) NULL,legend_text TEXT NULL, PRIMARY KEY(id))")
             except IndexError:
                 print "MySQL Error: %s" % str(e)
                 
@@ -38,7 +38,7 @@ class  databaseConnection():
         
         except mysql.Error, e:
             try:
-                self.dbConnection.cursor().execute("CREATE TABLE settings (id INT NOT NULL AUTO_INCREMENT, session_id INT NOT NULL, txPower TEXT NOT NULL, numberBursts INT NOT NULL, burstDuration INT NOT NULL, MSGPerBurst INT NOT NULL, PRIMARY KEY(id), FOREIGN KEY(session_id) REFERENCES dewi_experiments.experiments(id))")
+                self.dbConnection.cursor().execute("CREATE TABLE settings (id INT NOT NULL AUTO_INCREMENT, session_id INT NOT NULL, txPower TEXT NOT NULL, numberBursts INT NOT NULL, burstDuration INT NOT NULL, MSGPerBurst INT NOT NULL, PRIMARY KEY(id), FOREIGN KEY(session_id) REFERENCES "+self.db+".experiments(id))")
             except IndexError:
                 print "MySQL Error: %s" % str(e)
                 
@@ -50,7 +50,7 @@ class  databaseConnection():
         
         except mysql.Error, e:
             try:
-                self.dbConnection.cursor().execute("CREATE TABLE latency (id INT NOT NULL AUTO_INCREMENT, session_id INT NOT NULL,nodeID INT NOT NULL,timeslot INT NOT NULL, count INT NOT NULL, PRIMARY KEY(id), FOREIGN KEY(session_id) REFERENCES dewi_experiments.experiments(id))")
+                self.dbConnection.cursor().execute("CREATE TABLE latency (id INT NOT NULL AUTO_INCREMENT, session_id INT NOT NULL,nodeID INT NOT NULL,timeslot INT NOT NULL, count INT NOT NULL, PRIMARY KEY(id), FOREIGN KEY(session_id) REFERENCES "+self.db+".experiments(id))")
             except IndexError:
                 print "MySQL Error: %s" % str(e)
                 
@@ -62,7 +62,7 @@ class  databaseConnection():
         
         except mysql.Error, e:
             try:
-                self.dbConnection.cursor().execute("CREATE TABLE rxpackets (id INT NOT NULL AUTO_INCREMENT, session_id INT NOT NULL,nodeID INT NOT NULL,count INT NOT NULL, PRIMARY KEY(id), FOREIGN KEY(session_id) REFERENCES dewi_experiments.experiments(id))")
+                self.dbConnection.cursor().execute("CREATE TABLE rxpackets (id INT NOT NULL AUTO_INCREMENT, session_id INT NOT NULL,nodeID INT NOT NULL,count INT NOT NULL, PRIMARY KEY(id), FOREIGN KEY(session_id) REFERENCES "+self.db+".experiments(id))")
             except IndexError:
                 print "MySQL Error: %s" % str(e)
                 
@@ -74,7 +74,7 @@ class  databaseConnection():
         
         except mysql.Error, e:
             try:
-                self.dbConnection.cursor().execute("CREATE TABLE txpackets (id INT NOT NULL AUTO_INCREMENT, session_id INT NOT NULL,nodeID INT NOT NULL,count INT NOT NULL, PRIMARY KEY(id), FOREIGN KEY(session_id) REFERENCES dewi_experiments.experiments(id))")
+                self.dbConnection.cursor().execute("CREATE TABLE txpackets (id INT NOT NULL AUTO_INCREMENT, session_id INT NOT NULL,nodeID INT NOT NULL,count INT NOT NULL, PRIMARY KEY(id), FOREIGN KEY(session_id) REFERENCES "+self.db+".experiments(id))")
             except IndexError:
                 print "MySQL Error: %s" % str(e)
                 

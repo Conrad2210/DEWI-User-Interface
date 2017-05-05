@@ -5,6 +5,8 @@ import sys
 import os
 import csv
 import time
+from exceptions import IOError
+
 import numpy as np
 from statsmodels.distributions.empirical_distribution import ECDF
 import serial
@@ -867,16 +869,22 @@ class MainWindow(QtGui.QMainWindow):
                 for file in latencyFiles:
 
                     # print os.path.join(str(self.lastPath),tx,dens,'latency','sortedPerNode',file);
-                    print str(latencyFiles.index(file)) +" of " + str(len(latencyFiles))
+                    print str(latencyFiles.index(file)) +" of " + str(len(latencyFiles)) + " , " + str(file)
+
                     nodeId = file[0:file.index("_")];
                     with open(os.path.join(str(self.lastPath),tx,dens,'latency','sortedPerNode',file), 'rb') as csvfile:
                         data = csv.reader(csvfile);
                         resCount = {};
-                        for row in data:
-                            try:
-                                resCount[str(int(float(row[0]) * 1000))] = resCount[str(int(float(row[0]) * 1000))] + 1;
-                            except KeyError:
-                                resCount[str(int(float(row[0]) * 1000))] = 1;
+                        try:
+                            for row in data:
+
+                                try:
+                                    resCount[str(int(float(row[0]) * 1000))] = resCount[str(int(float(row[0]) * 1000))] + 1;
+                                except KeyError:
+                                    resCount[str(int(float(row[0]) * 1000))] = 1;
+
+                        except IOError:
+                             print "Line Error"
 
                         for key,value in resCount.items():
                             self.db.insertLatency(0,self.db.getLastExperimentID(),nodeId,int(key),int(value));
